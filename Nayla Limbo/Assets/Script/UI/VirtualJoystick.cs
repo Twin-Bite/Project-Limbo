@@ -21,6 +21,8 @@ public class VirtualJoystick : MonoBehaviour, IPointerDownHandler, IDragHandler,
 
     public Vector2 Direction => input;
     public float Magnitude => input.magnitude;
+    public float Horizontal => Direction.x;
+    public float Vertical => Direction.y;
 
     void Awake()
     {
