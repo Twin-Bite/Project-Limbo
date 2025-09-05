@@ -846,7 +846,7 @@ MonoBehaviour:
   canvas: {fileID: 697032176}
   handleRange: 0.6
   deadZone: 0.12
-  dynamic: 0
+  dynamic: 1
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0

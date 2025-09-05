@@ -1,6 +1,8 @@
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.EventSystems;
+using UnityEngine.UI;
+using System.Collections;
 
 public class VirtualJoystick : MonoBehaviour, IPointerDownHandler, IDragHandler, IPointerUpHandler
 {
@@ -15,14 +17,15 @@ public class VirtualJoystick : MonoBehaviour, IPointerDownHandler, IDragHandler,
 
     public bool dynamic = true;
 
+    [Header("Fade Settings")]
+    public float fadeDuration = 0.2f;
+
     int pointerId = -1;
     Vector2 input = Vector2.zero;
     Vector2 bgStartPos;
 
     public Vector2 Direction => input;
     public float Magnitude => input.magnitude;
-    public float Horizontal => Direction.x;
-    public float Vertical => Direction.y;
 
     void Awake()
     {
@@ -33,7 +36,11 @@ public class VirtualJoystick : MonoBehaviour, IPointerDownHandler, IDragHandler,
 
     void Start()
     {
-        if (dynamic) background.gameObject.SetActive(false);
+        if (dynamic)
+        {
+            SetAlpha(background, 0f);
+            SetAlpha(handle, 0f);
+        }
     }
 
     public void OnPointerDown(PointerEventData eventData)
@@ -44,8 +51,6 @@ public class VirtualJoystick : MonoBehaviour, IPointerDownHandler, IDragHandler,
 
             if (dynamic)
             {
-                background.gameObject.SetActive(true);
-
                 Vector2 localPoint;
                 Camera cam = (canvas.renderMode == RenderMode.ScreenSpaceOverlay) ? null : canvas.worldCamera;
 
@@ -54,6 +59,9 @@ public class VirtualJoystick : MonoBehaviour, IPointerDownHandler, IDragHandler,
                 {
                     background.anchoredPosition = localPoint;
                 }
+
+                StopAllCoroutines();
+                StartCoroutine(FadeAlpha(1f, resetAfter: false)); // Fade In
             }
 
             OnDrag(eventData);
@@ -99,8 +107,48 @@ public class VirtualJoystick : MonoBehaviour, IPointerDownHandler, IDragHandler,
 
         if (dynamic)
         {
-            background.gameObject.SetActive(false);
+            StopAllCoroutines();
+            // Fade out dulu, baru reset posisi setelah selesai
+            StartCoroutine(FadeAlpha(0f, resetAfter: true));
+        }
+    }
+
+    // Coroutine buat animasi fade
+    IEnumerator FadeAlpha(float target, bool resetAfter)
+    {
+        float startBg = background.GetComponent<Image>().color.a;
+        float startHandle = handle.GetComponent<Image>().color.a;
+        float t = 0f;
+
+        while (t < fadeDuration)
+        {
+            t += Time.deltaTime;
+            float alpha = Mathf.Lerp(startBg, target, t / fadeDuration);
+
+            SetAlpha(background, alpha);
+            SetAlpha(handle, alpha);
+
+            yield return null;
+        }
+
+        SetAlpha(background, target);
+        SetAlpha(handle, target);
+
+        if (resetAfter)
+        {
             background.anchoredPosition = bgStartPos;
+        }
+    }
+
+    // Helper buat ngatur alpha image
+    void SetAlpha(RectTransform rect, float alpha)
+    {
+        var img = rect.GetComponent<Image>();
+        if (img != null)
+        {
+            Color c = img.color;
+            c.a = alpha;
+            img.color = c;
         }
     }
 }
