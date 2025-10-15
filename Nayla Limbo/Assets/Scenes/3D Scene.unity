@@ -2824,20 +2824,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1ca002da428252441b92f28d83c8a65f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Shape:
-    rid: 3514731055225766162
-  m_ShapeRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_UnmodifiedMeshVersion: 10055
-  m_Size: {x: 1, y: 7, z: 12.720679}
-  m_LocalCenter: {x: 0.0000009536743, y: -0.28408003, z: 10.587307}
-  references:
-    version: 2
-    RefIds:
-    - rid: 3514731055225766162
-      type: {class: Cube, ns: UnityEngine.ProBuilder.Shapes, asm: Unity.ProBuilder}
-      data: 
---- !u!114 &336956334
-MonoBehaviour:
+  Player: {fileID: 1381684904}
+  activeCam: {fileID: 1194246343}
+  onEnterEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  onExitEvent:
+    m_PersistentCalls:
+      m_Calls: []
+--- !u!65 &704990684
+BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -4073,8 +4069,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 500115129}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: 0.70710707, z: -0, w: 0.70710653}
-  m_LocalPosition: {x: -2.9529629, y: 4.0254545, z: -30.824625}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -7.2604733, y: 6.7031593, z: -14.19844}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -5365,20 +5361,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1ca002da428252441b92f28d83c8a65f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Shape:
-    rid: 3514731055225766158
-  m_ShapeRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_UnmodifiedMeshVersion: 11144
-  m_Size: {x: 6.3306236, y: 0.5, z: 20.714497}
-  m_LocalCenter: {x: -9.269051, y: 0, z: 8.586247}
-  references:
-    version: 2
-    RefIds:
-    - rid: 3514731055225766158
-      type: {class: Cube, ns: UnityEngine.ProBuilder.Shapes, asm: Unity.ProBuilder}
-      data: 
---- !u!114 &869136690
-MonoBehaviour:
+  Player: {fileID: 1381684904}
+  activeCam: {fileID: 2030897309}
+  onEnterEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  onExitEvent:
+    m_PersistentCalls:
+      m_Calls: []
+--- !u!65 &934313409
+BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -6169,7 +6161,7 @@ Transform:
   m_GameObject: {fileID: 972651144}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 10.788621, y: -6.668956, z: 6.7043324}
+  m_LocalPosition: {x: -7.2604733, y: 6.7031593, z: -14.19844}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -12886,8 +12878,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1468187633}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.14347048, y: 0.4280826, z: -0.06903905, w: 0.8896039}
-  m_LocalPosition: {x: -28.44759, y: 4.231126, z: -17.375261}
+  m_LocalRotation: {x: 0.25025174, y: 0.37651566, z: -0.10639521, w: 0.8856015}
+  m_LocalPosition: {x: -7.2604733, y: 6.7031593, z: -14.19844}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -20955,20 +20947,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1ca002da428252441b92f28d83c8a65f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Shape:
-    rid: 3514731055225766162
-  m_ShapeRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_UnmodifiedMeshVersion: 9406
-  m_Size: {x: 1, y: 7, z: 10.6166}
-  m_LocalCenter: {x: 0, y: -0.28408003, z: 20.410915}
-  references:
-    version: 2
-    RefIds:
-    - rid: 3514731055225766162
-      type: {class: Cube, ns: UnityEngine.ProBuilder.Shapes, asm: Unity.ProBuilder}
-      data: 
---- !u!114 &1858274337
-MonoBehaviour:
+  Player: {fileID: 1381684904}
+  activeCam: {fileID: 1739929798}
+  onEnterEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  onExitEvent:
+    m_PersistentCalls:
+      m_Calls: []
+--- !u!65 &2003891161
+BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
