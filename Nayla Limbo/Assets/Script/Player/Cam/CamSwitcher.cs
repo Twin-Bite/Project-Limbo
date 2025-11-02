@@ -14,6 +14,8 @@ public class CamSwitcher : MonoBehaviour
     public UnityEvent onEnterEvent;
     public UnityEvent onExitEvent;
 
+    private static CinemachineCamera currentActiveCam;
+
     private void Reset()
     {
         BoxCollider col = GetComponent<BoxCollider>();
@@ -32,29 +34,41 @@ public class CamSwitcher : MonoBehaviour
         {
             activeCam = GetComponentInChildren<CinemachineCamera>();
         }
+
+        if (activeCam != null)
+            activeCam.gameObject.SetActive(false);
     }
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag("Player"))
+        if (!other.CompareTag("Player")) return;
+
+        if (currentActiveCam != null && currentActiveCam != activeCam)
+            currentActiveCam.gameObject.SetActive(false);
+
+        if (activeCam != null)
         {
-            if (activeCam != null)
-            {
-                activeCam.Priority = 10;
-            }
-            onEnterEvent.Invoke();
+            activeCam.gameObject.SetActive(true);
+            activeCam.Priority = 10;
+            currentActiveCam = activeCam;
         }
+
+        onEnterEvent.Invoke();
     }
 
     private void OnTriggerExit(Collider other)
     {
-        if (other.CompareTag("Player"))
+        if (!other.CompareTag("Player")) return;
+
+        if (activeCam != null)
         {
-            if (activeCam != null)
-            {
-                activeCam.Priority = 0;
-            }
-            onExitEvent.Invoke();
+            activeCam.Priority = 0;
+            activeCam.gameObject.SetActive(false);
         }
+
+        if (currentActiveCam == activeCam)
+            currentActiveCam = null;
+
+        onExitEvent.Invoke();
     }
 }
