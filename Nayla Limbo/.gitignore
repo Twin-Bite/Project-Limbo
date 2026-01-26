@@ -9,6 +9,7 @@
 /[Bb]uild/
 /[Bb]uilds/
 /[Ll]ogs/
+/[Aa]ssets/Plugins/
 /[Uu]ser[Ss]ettings/
 *.log
 
