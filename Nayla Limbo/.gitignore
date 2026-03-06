@@ -10,6 +10,7 @@
 /[Bb]uilds/
 /[Ll]ogs/
 /[Aa]ssets/Plugins/
+/[Aa]ssets/Assets/
 /[Uu]ser[Ss]ettings/
 *.log
 
