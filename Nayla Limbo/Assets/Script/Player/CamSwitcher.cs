@@ -5,7 +5,7 @@ using UnityEngine.Events;
 
 public class CamSwitcher : MonoBehaviour
 {
-    public Transform Player;
+    public GameObject Player;
 
     public CinemachineCamera activeCam;
     
@@ -14,7 +14,10 @@ public class CamSwitcher : MonoBehaviour
 
 
 
-  
+    private void Start()
+    {
+        Player = GameObject.Find("Player");
+    }
     private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Player"))
