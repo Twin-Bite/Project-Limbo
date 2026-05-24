@@ -39074,7 +39074,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Sanity
   maxSanity: 100
   currentSanity: 0
-  drainRate: 0.5
+  drainRate: 5
   rechargeRate: 10
   delayBeforeDrain: 10
   sanitySlider: {fileID: 1430262292}
