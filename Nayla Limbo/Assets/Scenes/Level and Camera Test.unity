@@ -91995,10 +91995,34 @@ PrefabInstance:
       propertyPath: zoneEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 1872768647}
+    - target: {fileID: 3264176543549297831, guid: dbdcd55fd963a3f4b997357185f724d9, type: 3}
+      propertyPath: zoneEvent.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 1750448745}
+    - target: {fileID: 3264176543549297831, guid: dbdcd55fd963a3f4b997357185f724d9, type: 3}
+      propertyPath: zoneEvent.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
+      value: BeginTeleport
+      objectReference: {fileID: 0}
+    - target: {fileID: 3264176543549297831, guid: dbdcd55fd963a3f4b997357185f724d9, type: 3}
+      propertyPath: zoneEvent.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
+      value: TeleBehaviour, Assembly-CSharp
+      objectReference: {fileID: 0}
     - target: {fileID: 3886464617133309533, guid: dbdcd55fd963a3f4b997357185f724d9, type: 3}
       propertyPath: zoneEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 1872768647}
+    - target: {fileID: 3886464617133309533, guid: dbdcd55fd963a3f4b997357185f724d9, type: 3}
+      propertyPath: zoneEvent.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 1750448746}
+    - target: {fileID: 3886464617133309533, guid: dbdcd55fd963a3f4b997357185f724d9, type: 3}
+      propertyPath: zoneEvent.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
+      value: BeginTeleport
+      objectReference: {fileID: 0}
+    - target: {fileID: 3886464617133309533, guid: dbdcd55fd963a3f4b997357185f724d9, type: 3}
+      propertyPath: zoneEvent.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
+      value: TeleBehaviour, Assembly-CSharp
+      objectReference: {fileID: 0}
     - target: {fileID: 4074148695612127530, guid: dbdcd55fd963a3f4b997357185f724d9, type: 3}
       propertyPath: m_LocalPosition.y
       value: -1.356294
@@ -92063,11 +92087,77 @@ PrefabInstance:
       propertyPath: MyTarget
       value: 
       objectReference: {fileID: 1750268645}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 615569242260637026, guid: dbdcd55fd963a3f4b997357185f724d9, type: 3}
+    - {fileID: 9059357184277341852, guid: dbdcd55fd963a3f4b997357185f724d9, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 6156018230786806439, guid: dbdcd55fd963a3f4b997357185f724d9, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1750448746}
+    - targetCorrespondingSourceObject: {fileID: 1935432323064641935, guid: dbdcd55fd963a3f4b997357185f724d9, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1750448745}
   m_SourcePrefab: {fileID: 100100000, guid: dbdcd55fd963a3f4b997357185f724d9, type: 3}
+--- !u!4 &1750448741 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 846889654056147156, guid: dbdcd55fd963a3f4b997357185f724d9, type: 3}
+  m_PrefabInstance: {fileID: 1750448740}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1750448742 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1935432323064641935, guid: dbdcd55fd963a3f4b997357185f724d9, type: 3}
+  m_PrefabInstance: {fileID: 1750448740}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &1750448743 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 4762663709731169637, guid: dbdcd55fd963a3f4b997357185f724d9, type: 3}
+  m_PrefabInstance: {fileID: 1750448740}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1750448744 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6156018230786806439, guid: dbdcd55fd963a3f4b997357185f724d9, type: 3}
+  m_PrefabInstance: {fileID: 1750448740}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1750448745
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1750448742}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1da0dc309167cb640ba46b438df947ac, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::TeleBehaviour
+  targetTransform: {fileID: 1750268645}
+  targetLocation: {fileID: 1750448743}
+  useDelayedStart: 1
+  delayedTime: 1
+  onCompleteMove:
+    m_PersistentCalls:
+      m_Calls: []
+--- !u!114 &1750448746
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1750448744}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1da0dc309167cb640ba46b438df947ac, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::TeleBehaviour
+  targetTransform: {fileID: 1750268645}
+  targetLocation: {fileID: 1750448741}
+  useDelayedStart: 1
+  delayedTime: 1
+  onCompleteMove:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!43 &1750535391
 Mesh:
   m_ObjectHideFlags: 0
