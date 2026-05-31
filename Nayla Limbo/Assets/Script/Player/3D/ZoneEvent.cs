@@ -21,6 +21,8 @@ public class ZoneEvent : MonoBehaviour
             {
                 Debug.Log(("Interaction Success"));
                 zoneEvent.Invoke();
+                Debug.Log(("Gibran"));
+                isInRange = false;
             }
         }
     }
@@ -40,6 +42,7 @@ public class ZoneEvent : MonoBehaviour
     {
         if(other.CompareTag("Player"))
         {
+            Debug.Log(("Jokowi"));
             isInRange = false;
         }
     }
