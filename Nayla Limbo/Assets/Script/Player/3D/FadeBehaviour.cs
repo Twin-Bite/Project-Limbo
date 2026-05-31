@@ -17,7 +17,6 @@ public class FadeBehaviour : MonoBehaviour
         InCubic,   OutCubic,   InOutCubic
     }
 
-    // ── Inspector Fields (digambar oleh FadeBehaviourEditor) ─
     [HideInInspector] public SelectType  selectType   = SelectType.Normal;
 
     // Normal / Gradient shared
@@ -54,8 +53,6 @@ public class FadeBehaviour : MonoBehaviour
 
     // Internal
     private Vector3 _initialLocalPos;
-
-    // ─────────────────────────────────────────────────────────
     void Start()
     {
         if (fadingPanel != null)
@@ -68,27 +65,18 @@ public class FadeBehaviour : MonoBehaviour
         }
     }
 
-    // ─────────────────────────────────────────────────────────
-    //  PUBLIC API
-    // ─────────────────────────────────────────────────────────
-
-    /// <summary>A. Mulai efek Fading In.</summary>
     public void BeginFadingIn()
     {
         StopAllCoroutines();
         StartCoroutine(CoFadeIn());
     }
 
-    /// <summary>B. Mulai efek Fading Out.</summary>
     public void BeginFadingOut()
     {
         StopAllCoroutines();
         StartCoroutine(CoFadeOut());
     }
 
-    // ─────────────────────────────────────────────────────────
-    //  COROUTINES
-    // ─────────────────────────────────────────────────────────
 
     IEnumerator CoFadeIn()
     {
@@ -155,10 +143,6 @@ public class FadeBehaviour : MonoBehaviour
         HandleFadeOutComplete();
     }
 
-    // ─────────────────────────────────────────────────────────
-    //  ANIMATION HELPERS
-    // ─────────────────────────────────────────────────────────
-
     IEnumerator FadeAlpha(CanvasGroup cg, float from, float to, float duration)
     {
         if (cg == null) yield break;
@@ -181,7 +165,7 @@ public class FadeBehaviour : MonoBehaviour
         {
             GradientMode.Y => new Vector3(start.x, targetVal, start.z),
             GradientMode.Z => new Vector3(start.x, start.y, targetVal),
-            _              => new Vector3(targetVal, start.y, start.z), // X default
+            _              => new Vector3(targetVal, start.y, start.z),
         };
         float t = 0f;
         while (t < duration)
@@ -236,10 +220,6 @@ public class FadeBehaviour : MonoBehaviour
         img.fillAmount = target;
     }
 
-    // ─────────────────────────────────────────────────────────
-    //  COMPLETE CALLBACKS
-    // ─────────────────────────────────────────────────────────
-
     void HandleFadeInComplete()
     {
         if (inOut)
@@ -266,10 +246,6 @@ public class FadeBehaviour : MonoBehaviour
             fadingPanel.blocksRaycasts = false;
         }
     }
-
-    // ─────────────────────────────────────────────────────────
-    //  EASING FUNCTIONS (tanpa library eksternal)
-    // ─────────────────────────────────────────────────────────
 
     float ApplyEase(float t)
     {
