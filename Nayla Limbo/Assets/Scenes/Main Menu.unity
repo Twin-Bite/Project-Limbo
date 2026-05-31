@@ -1823,6 +1823,8 @@ GameObject:
   - component: {fileID: 1094449438}
   - component: {fileID: 1094449441}
   - component: {fileID: 1094449442}
+  - component: {fileID: 1094449443}
+  - component: {fileID: 1094449444}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -1898,7 +1900,7 @@ Transform:
   m_GameObject: {fileID: 1094449437}
   serializedVersion: 2
   m_LocalRotation: {x: -0.08324298, y: 0, z: 0, w: 0.9965293}
-  m_LocalPosition: {x: 0, y: 0.52, z: -0.55}
+  m_LocalPosition: {x: 0, y: -0.12, z: -4.35}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1980,6 +1982,54 @@ MonoBehaviour:
       m_PostInfinity: 2
       m_RotationOrder: 4
   CustomBlends: {fileID: 0}
+--- !u!114 &1094449443
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1094449437}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 946cab0d2ada0ad4b9ca8aac5ed2c62f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _enabled: 1
+  _snapResolution: {x: 640, y: 360}
+  _useScreenResolution: 1
+  _snapStrength: 1
+  _jitterSpeed: 30
+  _jitterPixels: 1
+  _depthSteps: 48
+  _depthStrength: 0.75
+  _depthNoise: 0.0015
+  _uvPrecision: 96
+  _uvSnapStrength: 1
+  _uvWarpStrength: 0.35
+  _affineSwim: 0.25
+  _affineUvInterpolation: 1
+  _mipBias: -1
+  _vertexLighting: 1
+  _lightSteps: 2
+  _colorBits: 5
+  _ditherStrength: 0.65
+--- !u!114 &1094449444
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1094449437}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a74f60c3c83a4ee49bec83952eedd45f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp-firstpass::PSXStyleShader.PSXDownscaleDitherEffect
+  _shader: {fileID: 4800000, guid: eb732616613fa2d4ab375752805c9e6c, type: 3}
+  _targetResolution: {x: 320, y: 240}
+  _colorBits: 5
+  _ditherStrength: 0.8
+  _material: {fileID: 0}
 --- !u!1 &1271886173
 GameObject:
   m_ObjectHideFlags: 0
