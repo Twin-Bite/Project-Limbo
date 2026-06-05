@@ -44020,7 +44020,7 @@ Light:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 820329837}
   m_Enabled: 1
-  serializedVersion: 12
+  serializedVersion: 13
   m_Type: 1
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_Intensity: 1
@@ -44072,7 +44072,7 @@ Light:
   m_UseBoundingSphereOverride: 0
   m_UseViewFrustumForShadowCasterCull: 1
   m_ForceVisible: 0
-  m_ShadowRadius: 0
+  m_ShapeRadius: 0
   m_ShadowAngle: 0
   m_LightUnit: 1
   m_LuxAtDistance: 1
@@ -66623,8 +66623,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1353211096}
   serializedVersion: 2
-  m_LocalRotation: {x: -0.0301653, y: -0.9362766, z: -0.08307725, w: 0.3399622}
-  m_LocalPosition: {x: 12.00989, y: 0.31767702, z: 7.108957}
+  m_LocalRotation: {x: 0.03575488, y: 0.9314535, z: -0.09533956, w: 0.34932265}
+  m_LocalPosition: {x: 4.280407, y: 2.2732458, z: 1.2440033}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -78785,6 +78785,7 @@ Canvas:
   m_OverridePixelPerfect: 0
   m_SortingBucketNormalizedSize: 0
   m_VertexColorAlwaysGammaSpace: 0
+  m_UseReflectionProbes: 0
   m_AdditionalShaderChannelsFlag: 0
   m_UpdateRectTransformForStandalone: 0
   m_SortingLayerID: 0
@@ -91901,7 +91902,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7315229825149907468, guid: 5eb5cb1898701f44184bc3408f0622ce, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7315229825149907468, guid: 5eb5cb1898701f44184bc3408f0622ce, type: 3}
       propertyPath: m_TagString
@@ -125144,7 +125145,7 @@ Light:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6123996456707798989}
   m_Enabled: 1
-  serializedVersion: 12
+  serializedVersion: 13
   m_Type: 1
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_Intensity: 1
@@ -125196,7 +125197,7 @@ Light:
   m_UseBoundingSphereOverride: 0
   m_UseViewFrustumForShadowCasterCull: 1
   m_ForceVisible: 0
-  m_ShadowRadius: 0
+  m_ShapeRadius: 0
   m_ShadowAngle: 0
   m_LightUnit: 1
   m_LuxAtDistance: 1
@@ -136464,6 +136465,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::ZoneEvent
   isInRange: 0
   interactButton: 101
+  isOneShot: 0
+  cooldown: 0.5
+  interactionPrompt: {fileID: 0}
   zoneEvent:
     m_PersistentCalls:
       m_Calls:
@@ -136491,6 +136495,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  enableDebugLog: 1
 --- !u!4 &3264236569311931807
 Transform:
   m_ObjectHideFlags: 0
@@ -140767,6 +140772,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::ZoneEvent
   isInRange: 0
   interactButton: 101
+  isOneShot: 0
+  cooldown: 0.5
+  interactionPrompt: {fileID: 0}
   zoneEvent:
     m_PersistentCalls:
       m_Calls:
@@ -140794,6 +140802,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  enableDebugLog: 1
 --- !u!1 &3886889541714918276
 GameObject:
   m_ObjectHideFlags: 0
@@ -161063,8 +161072,8 @@ MonoBehaviour:
             m_BoolArgument: 0
           m_CallState: 2
   currentID: 0
-  charaNameText: {fileID: 6658432259964844186}
-  chatText: {fileID: 6658432260239531146}
+  charaNameText: {fileID: 0}
+  chatText: {fileID: 0}
 --- !u!222 &6658432260239531145
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -164158,6 +164167,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::ZoneEvent
   isInRange: 0
   interactButton: 101
+  isOneShot: 0
+  cooldown: 0.5
+  interactionPrompt: {fileID: 0}
   zoneEvent:
     m_PersistentCalls:
       m_Calls:
@@ -164173,6 +164185,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 1
         m_CallState: 2
+  enableDebugLog: 1
 --- !u!1 &7040268205351418599
 GameObject:
   m_ObjectHideFlags: 0
