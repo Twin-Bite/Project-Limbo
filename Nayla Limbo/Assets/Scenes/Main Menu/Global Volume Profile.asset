@@ -18,7 +18,7 @@ MonoBehaviour:
     m_Value: 10
   intensity:
     m_OverrideState: 1
-    m_Value: 0.22
+    m_Value: 0.121
   response:
     m_OverrideState: 1
     m_Value: 1
@@ -68,7 +68,7 @@ MonoBehaviour:
   active: 1
   shadows:
     m_OverrideState: 1
-    m_Value: {x: 0.98995906, y: 0.96225995, z: 1, w: -0.10695186}
+    m_Value: {x: 0.98995906, y: 0.96225995, z: 1, w: -0.23195186}
   midtones:
     m_OverrideState: 1
     m_Value: {x: 1, y: 1, z: 1, w: 1}
