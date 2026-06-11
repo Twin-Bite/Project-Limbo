@@ -18,7 +18,7 @@ MonoBehaviour:
     m_Value: 10
   intensity:
     m_OverrideState: 1
-    m_Value: 0.121
+    m_Value: 0.067
   response:
     m_OverrideState: 1
     m_Value: 1
@@ -102,7 +102,7 @@ MonoBehaviour:
   active: 1
   intensity:
     m_OverrideState: 1
-    m_Value: -0.5
+    m_Value: -0.3
   xMultiplier:
     m_OverrideState: 0
     m_Value: 1
@@ -155,28 +155,6 @@ MonoBehaviour:
   maxNits:
     m_OverrideState: 0
     m_Value: 1000
---- !u!114 &-20343689220666043
-MonoBehaviour:
-  m_ObjectHideFlags: 3
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5485954d14dfb9a4c8ead8edb0ded5b1, type: 3}
-  m_Name: LiftGammaGain
-  m_EditorClassIdentifier: Unity.RenderPipelines.Universal.Runtime::UnityEngine.Rendering.Universal.LiftGammaGain
-  active: 0
-  lift:
-    m_OverrideState: 1
-    m_Value: {x: 1, y: 1, z: 1, w: -0.046367854}
-  gamma:
-    m_OverrideState: 1
-    m_Value: {x: 0.9236425, y: 0.9384478, z: 1, w: 0.1545595}
-  gain:
-    m_OverrideState: 1
-    m_Value: {x: 0.9187942, y: 0.9476763, z: 1, w: 0.4945903}
 --- !u!114 &11400000
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -197,7 +175,23 @@ MonoBehaviour:
   - {fileID: -334300262394692720}
   - {fileID: -6009872045842704379}
   - {fileID: -444741712104516746}
-  - {fileID: -20343689220666043}
+  - {fileID: 3939323512766396715}
+--- !u!114 &3939323512766396715
+MonoBehaviour:
+  m_ObjectHideFlags: 3
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 81180773991d8724ab7f2d216912b564, type: 3}
+  m_Name: ChromaticAberration
+  m_EditorClassIdentifier: Unity.RenderPipelines.Universal.Runtime::UnityEngine.Rendering.Universal.ChromaticAberration
+  active: 1
+  intensity:
+    m_OverrideState: 1
+    m_Value: 1
 --- !u!114 &4991462028951521306
 MonoBehaviour:
   m_ObjectHideFlags: 3
@@ -221,7 +215,7 @@ MonoBehaviour:
     m_OverrideState: 1
     m_Value: 1
   scatter:
-    m_OverrideState: 0
+    m_OverrideState: 1
     m_Value: 0.7
   clamp:
     m_OverrideState: 0
@@ -278,13 +272,13 @@ MonoBehaviour:
     m_Value: 0
   focusDistance:
     m_OverrideState: 1
-    m_Value: 0.67
+    m_Value: 2
   aperture:
     m_OverrideState: 1
-    m_Value: 32
+    m_Value: 31.2
   focalLength:
     m_OverrideState: 1
-    m_Value: 104
+    m_Value: 151
   bladeCount:
     m_OverrideState: 0
     m_Value: 5
