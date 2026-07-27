@@ -10,6 +10,9 @@ public class CamSwitcher : MonoBehaviour
     public Transform Player;
     public CinemachineCamera activeCam;
 
+    [Header("Camera Settings")]
+    public bool enablePanning = false;
+
     [Header("Events")]
     public UnityEvent onEnterEvent;
     public UnityEvent onExitEvent;
@@ -36,7 +39,15 @@ public class CamSwitcher : MonoBehaviour
         }
 
         if (activeCam != null)
+        {
             activeCam.gameObject.SetActive(false);
+            
+            // Panning
+            if (enablePanning && Player != null)
+            {
+                activeCam.LookAt = Player;
+            }
+        }
     }
 
     private void OnTriggerEnter(Collider other)
