@@ -2,11 +2,20 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="56a4962c-feca-4c70-93b3-f4f131b2fb21" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Level and Camera Test.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Level and Camera Test.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.Nayla Limbo/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Nayla Limbo/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/DefaultVolumeProfile.asset.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/DefaultVolumeProfile.asset.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Dialog Test.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Dialog Test.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Endless Hall Test.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Endless Hall Test.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Endless Hall Test.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Endless Hall Test.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Endless Hall Test.unity.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Endless Hall Test.unity.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Level and Camera Test/Global Volume Profile.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Level and Camera Test/Global Volume Profile.asset" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/Main Menu.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Main Menu.unity" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/Main Menu/Global Volume Profile.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Main Menu/Global Volume Profile.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Script/Player/3D/ZoneEvent.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Script/Player/3D/ZoneEvent.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Settings/Build Profiles/New Lighting Settings.lighting" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Settings/Build Profiles/New Lighting Settings.lighting" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Settings/URPRenderer.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Settings/URPRenderer.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Settings/URPRenderer_Renderer.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Settings/URPRenderer_Renderer.asset" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ProjectSettings/Packages/com.unity.probuilder/Settings.json" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/Packages/com.unity.probuilder/Settings.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/ShaderGraphSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/ShaderGraphSettings.asset" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -15,25 +24,25 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="Git.Settings">
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="HighlightingSettingsPerFile">
-    <setting file="file://$PROJECT_DIR$/Assets/Scenes/Main Menu/Global Volume Profile.asset" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://C:/Work/Tekfunghan/medical-procedural-local/Assets/Plugins (Git)/Paroxe/PDFRenderer/Internal/Scripts/PDFInternalUtils.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://C:/Work/[Integrasi] desktop-procedural-unhan-2025-ud/Assets/Paroxe/PDFRenderer/API/PDFViewer.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://C:/Work/Tekfunghan/medical-procedural-local/Assets/Plugins (Git)/Paroxe/PDFRenderer/Internal/Scripts/Viewer/PDFViewerLeftPanelScrollbar.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://C:/Work/[Integrasi] desktop-procedural-unhan-2025-ud/Assets/Paroxe/PDFRenderer/Internal/Scripts/Viewer/PDFViewerLeftPanelScrollbar.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Script/Utility/TimeManager.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scenes/Main Menu/Global Volume Profile.asset" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Script/UI/ClockSystem.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Script/Player/3D/ZoneEvent.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://C:/Work/[Integrasi] desktop-procedural-unhan-2025-ud/Assets/Paroxe/PDFRenderer/API/Rendering/PDFRenderer.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Plugins/Easy Cutscene/Assets/Scripts/EcCutscene.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://C:/Work/Tekfunghan/medical-procedural-local/Assets/Plugins (Git)/Paroxe/PDFRenderer/Internal/Scripts/Viewer/PDFBookmarksViewer.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://C:/Work/[Integrasi] desktop-procedural-unhan-2025-ud/Assets/Paroxe/PDFRenderer/Internal/Scripts/Viewer/PDFViewerLeftPanelScrollbar.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://C:/Work/Tekfunghan/medical-procedural-local/Assets/Plugins (Git)/Paroxe/PDFRenderer/Internal/Scripts/Viewer/PDFThumbnailsViewer.cs" root0="SKIP_HIGHLIGHTING" />
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/Assets/Script/Player/3D/ZoneEvent.cs" />
         <option value="$PROJECT_DIR$/Assets/Plugins/Easy Cutscene/Assets/Scripts/EcCutscene.cs" />
+        <option value="$PROJECT_DIR$/Assets/Script/UI/ClockSystem.cs" />
+        <option value="$PROJECT_DIR$/Assets/Script/Utility/TimeManager.cs" />
       </list>
     </option>
   </component>
@@ -84,6 +93,7 @@
       <option name="presentableId" value="Default" />
       <updated>1780454314668</updated>
       <workItem from="1780454317422" duration="5274000" />
+      <workItem from="1790223718994" duration="4262000" />
     </task>
     <servers />
   </component>
@@ -97,7 +107,9 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="COLUMN_ORDER" />
+            </State>
           </value>
         </entry>
       </map>
