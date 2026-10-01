@@ -3,19 +3,69 @@
   <component name="ChangeListManager">
     <list default="true" id="56a4962c-feca-4c70-93b3-f4f131b2fb21" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Nayla Limbo/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Nayla Limbo/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/DefaultVolumeProfile.asset.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/DefaultVolumeProfile.asset.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Dialog Test.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Dialog Test.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Endless Hall Test.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Endless Hall Test.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Endless Hall Test.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Endless Hall Test.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Endless Hall Test.unity.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Endless Hall Test.unity.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/MobileDependencyResolver/Editor/1.2.185/Google.VersionHandlerImpl.dll.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Day 1.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Day 1.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Day 1/Day 1 Baking Set-Default.CellData.bytes" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Day 1/Day 1 Baking Set-Default.CellData.bytes.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Day 1/Day 1 Baking Set-Default.CellOptionalData.bytes" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Day 1/Day 1 Baking Set-Default.CellOptionalData.bytes.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Day 1/Day 1 Baking Set-Default.CellProbeOcclusionData.bytes" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Day 1/Day 1 Baking Set-Default.CellProbeOcclusionData.bytes.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Day 1/Day 1 Baking Set.CellBricksData.bytes" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Day 1/Day 1 Baking Set.CellBricksData.bytes.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Day 1/Day 1 Baking Set.CellSharedData.bytes" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Day 1/Day 1 Baking Set.CellSharedData.bytes.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Day 1/Day 1 Baking Set.CellSupportData.bytes" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Day 1/Day 1 Baking Set.CellSupportData.bytes.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Day 1/Day 1 Baking Set.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Day 1/Day 1 Baking Set.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Day 1/LightingData.asset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Day 1/LightingData.asset.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Day 1/Lightmap-0_comp_dir.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Day 1/Lightmap-0_comp_dir.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Day 1/Lightmap-0_comp_light.exr" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Day 1/Lightmap-10_comp_dir.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Day 1/Lightmap-10_comp_dir.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Day 1/Lightmap-10_comp_light.exr" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Day 1/Lightmap-11_comp_dir.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Day 1/Lightmap-11_comp_dir.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Day 1/Lightmap-11_comp_light.exr" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Day 1/Lightmap-1_comp_dir.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Day 1/Lightmap-1_comp_dir.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Day 1/Lightmap-1_comp_light.exr" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Day 1/Lightmap-2_comp_dir.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Day 1/Lightmap-2_comp_dir.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Day 1/Lightmap-2_comp_light.exr" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Day 1/Lightmap-3_comp_dir.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Day 1/Lightmap-3_comp_dir.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Day 1/Lightmap-3_comp_light.exr" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Day 1/Lightmap-4_comp_dir.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Day 1/Lightmap-4_comp_dir.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Day 1/Lightmap-4_comp_light.exr" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Day 1/Lightmap-5_comp_dir.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Day 1/Lightmap-5_comp_dir.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Day 1/Lightmap-5_comp_light.exr" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Day 1/Lightmap-6_comp_dir.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Day 1/Lightmap-6_comp_dir.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Day 1/Lightmap-6_comp_light.exr" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Day 1/Lightmap-7_comp_dir.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Day 1/Lightmap-7_comp_dir.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Day 1/Lightmap-7_comp_light.exr" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Day 1/Lightmap-8_comp_dir.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Day 1/Lightmap-8_comp_dir.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Day 1/Lightmap-8_comp_light.exr" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Day 1/Lightmap-9_comp_dir.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Day 1/Lightmap-9_comp_dir.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Day 1/Lightmap-9_comp_light.exr" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/Level and Camera Test/Global Volume Profile.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Level and Camera Test/Global Volume Profile.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Main Menu.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Main Menu.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Main Menu/Global Volume Profile.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Main Menu/Global Volume Profile.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Settings/Build Profiles/New Lighting Settings.lighting" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Settings/Build Profiles/New Lighting Settings.lighting" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Settings/URPRenderer.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Settings/URPRenderer.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Settings/URPRenderer_Renderer.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Settings/URPRenderer_Renderer.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/Packages/com.unity.probuilder/Settings.json" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/Packages/com.unity.probuilder/Settings.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/ShaderGraphSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/ShaderGraphSettings.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Script/Envi/Door.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Script/Envi/Door/DoorController.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Script/Envi/Door/DoorController.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Script/Envi/Door/RoomDoor.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Script/Envi/Door/RoomDoor.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Script/Envi/Randomizer.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Script/Envi/Randomizer/RoomManager.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Script/Envi/Randomizer/RoomManager.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/URPProjectSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/URPProjectSettings.asset" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -29,9 +79,8 @@
   <component name="HighlightingSettingsPerFile">
     <setting file="file://C:/Work/[Integrasi] desktop-procedural-unhan-2025-ud/Assets/Paroxe/PDFRenderer/API/PDFViewer.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://C:/Work/[Integrasi] desktop-procedural-unhan-2025-ud/Assets/Paroxe/PDFRenderer/Internal/Scripts/Viewer/PDFViewerLeftPanelScrollbar.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Script/Utility/TimeManager.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Script/Utility/SceneManager.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scenes/Main Menu/Global Volume Profile.asset" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Script/UI/ClockSystem.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Script/Player/3D/ZoneEvent.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://C:/Work/[Integrasi] desktop-procedural-unhan-2025-ud/Assets/Paroxe/PDFRenderer/API/Rendering/PDFRenderer.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Plugins/Easy Cutscene/Assets/Scripts/EcCutscene.cs" root0="FORCE_HIGHLIGHTING" />
@@ -94,6 +143,7 @@
       <updated>1780454314668</updated>
       <workItem from="1780454317422" duration="5274000" />
       <workItem from="1790223718994" duration="4262000" />
+      <workItem from="1790824645066" duration="1209000" />
     </task>
     <servers />
   </component>
