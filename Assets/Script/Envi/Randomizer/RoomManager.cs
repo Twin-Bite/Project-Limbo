@@ -39,7 +39,7 @@ public class RoomManager : MonoBehaviour
     [SerializeField] private UnityEvent onRouteStarted = new UnityEvent();
     [SerializeField] private UnityEvent onBeforeTeleport = new UnityEvent();
     [SerializeField] private UnityEvent onAfterTeleport = new UnityEvent();
-    [SerializeField] private UnityEvent onProgressChanged = new UnityEvent();
+    [SerializeField] private UnityEvent<int> onProgressChanged = new UnityEvent<int>();
     [SerializeField] private UnityEvent onAllRoomsVisited = new UnityEvent();
     [SerializeField] private UnityEvent onRouteFinished = new UnityEvent();
 
@@ -118,7 +118,7 @@ public class RoomManager : MonoBehaviour
     // Kita panggil UnityEvent punya pintu.
     public void GoToRandomRoom()
     {
-        if (!isActiveEnabled ||
+        if (!isActiveAndEnabled ||
             !routeReady ||
             isTransitioning ||
             Time.unscaledTime < nextAllowedTime)
@@ -198,7 +198,7 @@ public class RoomManager : MonoBehaviour
                 );
             }
 
-            if (!isActiveEnabled || !routeReady)
+            if (!isActiveAndEnabled || !routeReady)
             {
                 yield break;
             }
@@ -334,7 +334,7 @@ public class RoomManager : MonoBehaviour
 
     private void OnDisable()
     {
-        StopAllCoroutine();
+        StopAllCoroutines();
 
         routeReady = false;
         isTransitioning = false;

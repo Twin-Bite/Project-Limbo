@@ -35,7 +35,7 @@ public class RoomDoor : MonoBehaviour
 
     public void Interact()
     {
-        if (!isActiveEnabled)
+        if (!isActiveAndEnabled)
         {
             return;
         }
