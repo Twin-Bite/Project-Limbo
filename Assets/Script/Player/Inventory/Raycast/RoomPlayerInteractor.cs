@@ -121,11 +121,20 @@ public class RoomPlayerInteractor : MonoBehaviour
         }
 
         RoomKeyDoor keyDoor =
-            hit.collider.GetComponentInParent<RoomKeyDoor>();
+    hit.collider.GetComponentInParent<RoomKeyDoor>();
 
-        if (keyDoor != null && keyDoor.isActiveAndEnabled)
-        {
-            keyDoor.Interact(inventory);
-        }
+if (keyDoor != null && keyDoor.isActiveAndEnabled)
+{
+    keyDoor.Interact(inventory);
+    return;
+}
+
+RoomDoor roomDoor =
+    hit.collider.GetComponentInParent<RoomDoor>();
+
+if (roomDoor != null && roomDoor.isActiveAndEnabled)
+{
+    roomDoor.Interact();
+}
     }
 }
