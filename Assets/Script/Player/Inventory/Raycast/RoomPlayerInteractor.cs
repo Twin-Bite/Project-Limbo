@@ -103,7 +103,7 @@ public class RoomPlayerInteractor : MonoBehaviour
             out RaycastHit hit,
             interactionDistance,
             interactionLayers,
-            QueryTriggerInteraction.Ignore
+            QueryTriggerInteraction.Collide
         );
 
         if (!hitSomething)
