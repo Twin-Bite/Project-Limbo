@@ -222,13 +222,16 @@ public class FadeBehaviour : MonoBehaviour
 
     void HandleFadeInComplete()
     {
+        onCompleteFadingIn?.Invoke();
         if (inOut)
         {
             BeginFadingOut();
+            //Debug.Log("hidup prabowo");
         }
         else
         {
-            onCompleteFadingIn?.Invoke();
+           
+            //Debug.Log("hidup jokowi");
             if (modifyOtherCanvasGroup && fadingPanel != null)
             {
                 fadingPanel.interactable    = true;

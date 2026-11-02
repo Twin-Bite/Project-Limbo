@@ -2,11 +2,49 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="56a4962c-feca-4c70-93b3-f4f131b2fb21" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Level and Camera Test.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Level and Camera Test.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Main Menu.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Main Menu.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Main Menu/Global Volume Profile.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Main Menu/Global Volume Profile.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Script/Player/3D/ZoneEvent.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Script/Player/3D/ZoneEvent.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/Packages/com.unity.probuilder/Settings.json" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/Packages/com.unity.probuilder/Settings.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.Nayla Limbo/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Nayla Limbo/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Day 1.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Day 1.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Day 1/Day 1 Baking Set-Default.CellData.bytes" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Day 1/Day 1 Baking Set-Default.CellData.bytes.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Day 1/Day 1 Baking Set-Default.CellOptionalData.bytes" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Day 1/Day 1 Baking Set-Default.CellOptionalData.bytes.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Day 1/Day 1 Baking Set-Default.CellProbeOcclusionData.bytes" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Day 1/Day 1 Baking Set-Default.CellProbeOcclusionData.bytes.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Day 1/Day 1 Baking Set.CellBricksData.bytes" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Day 1/Day 1 Baking Set.CellBricksData.bytes.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Day 1/Day 1 Baking Set.CellSharedData.bytes" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Day 1/Day 1 Baking Set.CellSharedData.bytes.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Day 1/Day 1 Baking Set.CellSupportData.bytes" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Day 1/Day 1 Baking Set.CellSupportData.bytes.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Day 1/Day 1 Baking Set.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Day 1/Day 1 Baking Set.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Day 1/LightingData.asset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Day 1/LightingData.asset.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Day 1/Lightmap-0_comp_dir.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Day 1/Lightmap-0_comp_dir.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Day 1/Lightmap-10_comp_dir.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Day 1/Lightmap-10_comp_dir.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Day 1/Lightmap-11_comp_dir.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Day 1/Lightmap-11_comp_dir.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Day 1/Lightmap-1_comp_dir.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Day 1/Lightmap-1_comp_dir.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Day 1/Lightmap-2_comp_dir.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Day 1/Lightmap-2_comp_dir.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Day 1/Lightmap-3_comp_dir.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Day 1/Lightmap-3_comp_dir.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Day 1/Lightmap-4_comp_dir.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Day 1/Lightmap-4_comp_dir.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Day 1/Lightmap-5_comp_dir.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Day 1/Lightmap-5_comp_dir.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Day 1/Lightmap-6_comp_dir.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Day 1/Lightmap-6_comp_dir.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Day 1/Lightmap-7_comp_dir.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Day 1/Lightmap-7_comp_dir.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Day 1/Lightmap-8_comp_dir.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Day 1/Lightmap-8_comp_dir.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Day 1/Lightmap-9_comp_dir.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Day 1/Lightmap-9_comp_dir.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Script/Player/3D/FadeBehaviour.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Script/Player/3D/FadeBehaviour.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Script/Utility/TimeManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Script/Utility/TimeManager.cs" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -15,25 +53,28 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="Git.Settings">
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="HighlightingSettingsPerFile">
-    <setting file="file://$PROJECT_DIR$/Assets/Scenes/Main Menu/Global Volume Profile.asset" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://C:/Work/Tekfunghan/medical-procedural-local/Assets/Plugins (Git)/Paroxe/PDFRenderer/Internal/Scripts/PDFInternalUtils.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://C:/Work/[Integrasi] desktop-procedural-unhan-2025-ud/Assets/Paroxe/PDFRenderer/API/PDFViewer.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://C:/Work/Tekfunghan/medical-procedural-local/Assets/Plugins (Git)/Paroxe/PDFRenderer/Internal/Scripts/Viewer/PDFViewerLeftPanelScrollbar.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://C:/Work/[Integrasi] desktop-procedural-unhan-2025-ud/Assets/Paroxe/PDFRenderer/Internal/Scripts/Viewer/PDFViewerLeftPanelScrollbar.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Script/Utility/SceneManager.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scenes/Main Menu/Global Volume Profile.asset" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Script/Utility/timeScriptable.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Script/Player/3D/ZoneEvent.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://C:/Work/[Integrasi] desktop-procedural-unhan-2025-ud/Assets/Paroxe/PDFRenderer/API/Rendering/PDFRenderer.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Script/Utility/TimeManager.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Plugins/Easy Cutscene/Assets/Scripts/EcCutscene.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://C:/Work/Tekfunghan/medical-procedural-local/Assets/Plugins (Git)/Paroxe/PDFRenderer/Internal/Scripts/Viewer/PDFBookmarksViewer.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://C:/Work/[Integrasi] desktop-procedural-unhan-2025-ud/Assets/Paroxe/PDFRenderer/Internal/Scripts/Viewer/PDFViewerLeftPanelScrollbar.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://C:/Work/Tekfunghan/medical-procedural-local/Assets/Plugins (Git)/Paroxe/PDFRenderer/Internal/Scripts/Viewer/PDFThumbnailsViewer.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Script/Player/3D/FadeBehaviour.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/Assets/Script/Player/3D/ZoneEvent.cs" />
         <option value="$PROJECT_DIR$/Assets/Plugins/Easy Cutscene/Assets/Scripts/EcCutscene.cs" />
+        <option value="$PROJECT_DIR$/Assets/Script/Player/3D/FadeBehaviour.cs" />
+        <option value="$PROJECT_DIR$/Assets/Script/Utility/TimeManager.cs" />
+        <option value="$PROJECT_DIR$/Assets/Script/Utility/timeScriptable.cs" />
       </list>
     </option>
   </component>
@@ -84,6 +125,7 @@
       <option name="presentableId" value="Default" />
       <updated>1780454314668</updated>
       <workItem from="1780454317422" duration="5274000" />
+      <workItem from="1793592882736" duration="7245000" />
     </task>
     <servers />
   </component>
@@ -97,7 +139,9 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="COLUMN_ORDER" />
+            </State>
           </value>
         </entry>
       </map>
