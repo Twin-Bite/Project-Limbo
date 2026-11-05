@@ -1,15 +1,18 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
 
+[DisallowMultipleComponent]
 public class RoomPlayerInteractor : MonoBehaviour
 {
     [Header("References")]
     [SerializeField] private RoomInventory inventory;
-    [SerializeField] private Camera playerCamera;
+
+    [Tooltip("Opsional. Jika kosong, gunakan pusat CharacterController.")]
+    [SerializeField] private Transform interactionPoint;
 
     [Header("Interaction")]
     [Min(0.1f)]
-    [SerializeField] private float interactionDistance = 2.5f;
+    [SerializeField] private float interactionDistance = 2f;
 
     [SerializeField] private LayerMask interactionLayers = ~0;
 
@@ -23,15 +26,10 @@ public class RoomPlayerInteractor : MonoBehaviour
             inventory = GetComponent<RoomInventory>();
         }
 
-        if (playerCamera == null)
-        {
-            playerCamera = GetComponentInChildren<Camera>();
-        }
-
-        if (inventory == null || playerCamera == null)
+        if (inventory == null)
         {
             Debug.LogError(
-                "Inventory atau Player Camera belum diisi.",
+                "RoomInventory belum dipasang pada Player.",
                 this
             );
 
@@ -48,10 +46,7 @@ public class RoomPlayerInteractor : MonoBehaviour
 
     private void OnEnable()
     {
-        if (interactAction == null)
-        {
-            return;
-        }
+        if (interactAction == null) return;
 
         interactAction.performed += OnInteractPerformed;
         interactAction.Enable();
@@ -59,10 +54,7 @@ public class RoomPlayerInteractor : MonoBehaviour
 
     private void OnDisable()
     {
-        if (interactAction == null)
-        {
-            return;
-        }
+        if (interactAction == null) return;
 
         interactAction.performed -= OnInteractPerformed;
         interactAction.Disable();
@@ -80,61 +72,116 @@ public class RoomPlayerInteractor : MonoBehaviour
         TryInteract();
     }
 
-    // Bisa dihubungkan ke UnityEvent untuk menonaktifkan
-    // interaksi saat fade, cutscene, atau puzzle.
     public void SetInteractionEnabled(bool value)
     {
         interactionEnabled = value;
+    }
+
+    private Vector3 GetInteractionCenter()
+    {
+        if (interactionPoint != null)
+        {
+            return interactionPoint.position;
+        }
+
+        CharacterController controller =
+            GetComponent<CharacterController>();
+
+        if (controller != null && controller.enabled)
+        {
+            return controller.bounds.center;
+        }
+
+        return transform.position + Vector3.up;
     }
 
     public void TryInteract()
     {
         if (!isActiveAndEnabled ||
             !interactionEnabled ||
-            inventory == null ||
-            playerCamera == null)
+            inventory == null)
         {
             return;
         }
 
-        bool hitSomething = Physics.Raycast(
-            playerCamera.transform.position,
-            playerCamera.transform.forward,
-            out RaycastHit hit,
+        Vector3 center = GetInteractionCenter();
+
+        Collider[] nearby = Physics.OverlapSphere(
+            center,
             interactionDistance,
             interactionLayers,
             QueryTriggerInteraction.Collide
         );
 
-        if (!hitSomething)
+        RoomPickup nearestPickup = null;
+        RoomKeyDoor nearestDoor = null;
+
+        float nearestDistance = float.PositiveInfinity;
+
+        foreach (Collider candidate in nearby)
         {
-            return;
+            // Lewati collider Player dan anak-anaknya.
+            if (candidate.transform.IsChildOf(transform))
+            {
+                continue;
+            }
+
+            RoomPickup pickup =
+                candidate.GetComponentInParent<RoomPickup>();
+
+            RoomKeyDoor door =
+                candidate.GetComponentInParent<RoomKeyDoor>();
+
+            bool canPickUp =
+                pickup != null && pickup.isActiveAndEnabled;
+
+            bool canUseDoor =
+                door != null && door.isActiveAndEnabled;
+
+            // Lantai dan dekorasi biasa akan dilewati.
+            if (!canPickUp && !canUseDoor)
+            {
+                continue;
+            }
+
+            float distance = (
+                candidate.ClosestPoint(center) - center
+            ).sqrMagnitude;
+
+            if (distance >= nearestDistance)
+            {
+                continue;
+            }
+
+            nearestDistance = distance;
+            nearestPickup = canPickUp ? pickup : null;
+            nearestDoor = canPickUp ? null : door;
         }
 
-        RoomPickup pickup =
-            hit.collider.GetComponentInParent<RoomPickup>();
-
-        if (pickup != null && pickup.isActiveAndEnabled)
+        // Satu kali E hanya berinteraksi dengan satu target.
+        if (nearestPickup != null)
         {
-            pickup.Interact(inventory);
-            return;
+            nearestPickup.Interact(inventory);
         }
+        else if (nearestDoor != null)
+        {
+            nearestDoor.Interact(inventory);
+        }
+        else
+        {
+            inventory.ShowMessage(
+                "Tidak ada item atau pintu dalam jangkauan."
+            );
+        }
+    }
 
-        RoomKeyDoor keyDoor =
-    hit.collider.GetComponentInParent<RoomKeyDoor>();
+    private void OnDrawGizmosSelected()
+    {
+        Gizmos.color = Color.yellow;
 
-if (keyDoor != null && keyDoor.isActiveAndEnabled)
-{
-    keyDoor.Interact(inventory);
-    return;
-}
-
-RoomDoor roomDoor =
-    hit.collider.GetComponentInParent<RoomDoor>();
-
-if (roomDoor != null && roomDoor.isActiveAndEnabled)
-{
-    roomDoor.Interact();
-}
+        Gizmos.DrawWireSphere(
+            GetInteractionCenter(),
+            interactionDistance
+        );
     }
 }
