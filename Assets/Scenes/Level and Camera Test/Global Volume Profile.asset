@@ -134,7 +134,7 @@ MonoBehaviour:
     m_Value: 10
   intensity:
     m_OverrideState: 1
-    m_Value: 0.021
+    m_Value: 0.055
   response:
     m_OverrideState: 1
     m_Value: 1
