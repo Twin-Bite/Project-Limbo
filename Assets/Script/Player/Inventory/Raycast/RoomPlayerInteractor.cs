@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.EventSystems;
 using UnityEngine.InputSystem;
 
 [DisallowMultipleComponent]
@@ -10,6 +11,13 @@ public class RoomPlayerInteractor : MonoBehaviour
     [Header("Interaction")]
     [Min(0.1f)] [SerializeField] private float interactionDistance = 2f;
     [SerializeField] private LayerMask interactionLayers = ~0;
+
+    [Header("Click NumLock")]
+    [SerializeField] private bool clickToInspect = true;
+    [SerializeField] private bool showCursorOnStart = true;
+    [SerializeField] private Camera interactionCamera;
+    [Min(1f)] [SerializeField] private float mouseRayDistance = 100f;
+
     private InputAction interactAction;
     private bool interactionEnabled = true;
 
@@ -23,6 +31,15 @@ public class RoomPlayerInteractor : MonoBehaviour
             return;
         }
         interactAction = new InputAction("Interact", InputActionType.Button, "<Keyboard>/e");
+    }
+
+    private void Start()
+    {
+        if (clickToInspect && showCursorOnStart)
+        {
+            Cursor.lockState = CursorLockMode.None;
+            Cursor.visible = true;
+        }
     }
 
     private void OnEnable()
@@ -51,18 +68,55 @@ public class RoomPlayerInteractor : MonoBehaviour
         return transform.position + Vector3.up;
     }
 
+    // Proses setelah Update UI; query hanya dilakukan pada frame klik.
+    private void LateUpdate()
+    {
+        if (!clickToInspect || !interactionEnabled || inventory == null ||
+            Mouse.current == null || !Mouse.current.leftButton.wasPressedThisFrame) return;
+        if (EventSystem.current != null && EventSystem.current.IsPointerOverGameObject()) return;
+        Camera camera = interactionCamera != null ? interactionCamera : Camera.main;
+        if (camera == null) return;
+
+        Ray ray = camera.ScreenPointToRay(Mouse.current.position.ReadValue());
+        RaycastHit[] hits = Physics.RaycastAll(ray, mouseRayDistance,
+            interactionLayers, QueryTriggerInteraction.Collide);
+        Collider nearestCollider = null;
+        RoomLockInspector nearestInspector = null;
+        float nearestDistance = float.PositiveInfinity;
+        foreach (RaycastHit hit in hits)
+        {
+            Collider candidate = hit.collider;
+            if (candidate.transform.IsChildOf(transform)) continue;
+            RoomLockInspector inspector = candidate.GetComponentInParent<RoomLockInspector>();
+            // Trigger area kamera tidak menghalangi klik pada gembok.
+            if (candidate.isTrigger && inspector == null) continue;
+            if (hit.distance >= nearestDistance) continue;
+            nearestDistance = hit.distance;
+            nearestCollider = candidate;
+            nearestInspector = inspector;
+        }
+        if (nearestCollider == null || nearestInspector == null || !nearestInspector.CanInspect) return;
+        float playerDistance = (nearestCollider.ClosestPoint(GetInteractionCenter()) -
+            GetInteractionCenter()).sqrMagnitude;
+        if (playerDistance > interactionDistance * interactionDistance)
+        {
+            inventory.ShowMessage("Dekati gembok untuk membuka puzzle.");
+            return;
+        }
+        nearestInspector.Interact(this);
+    }
+
+    // E tetap tersedia untuk pickup, pintu berkunci, dan shortcut puzzle.
     public void TryInteract()
     {
         if (!isActiveAndEnabled || !interactionEnabled || inventory == null) return;
         Vector3 center = GetInteractionCenter();
         Collider[] nearby = Physics.OverlapSphere(
             center, interactionDistance, interactionLayers, QueryTriggerInteraction.Collide);
-
         RoomPickup nearestPickup = null;
         RoomKeyDoor nearestDoor = null;
         RoomLockInspector nearestInspector = null;
         float nearestDistance = float.PositiveInfinity;
-
         foreach (Collider candidate in nearby)
         {
             if (candidate.transform.IsChildOf(transform)) continue;
@@ -73,7 +127,6 @@ public class RoomPlayerInteractor : MonoBehaviour
             bool canUseDoor = door != null && door.isActiveAndEnabled;
             bool canInspect = inspector != null && inspector.CanInspect;
             if (!canPickUp && !canUseDoor && !canInspect) continue;
-
             float distance = (candidate.ClosestPoint(center) - center).sqrMagnitude;
             if (distance >= nearestDistance) continue;
             nearestDistance = distance;
@@ -81,7 +134,6 @@ public class RoomPlayerInteractor : MonoBehaviour
             nearestPickup = !canInspect && canPickUp ? pickup : null;
             nearestDoor = !canInspect && !canPickUp ? door : null;
         }
-
         if (nearestInspector != null) nearestInspector.Interact(this);
         else if (nearestPickup != null) nearestPickup.Interact(inventory);
         else if (nearestDoor != null) nearestDoor.Interact(inventory);
