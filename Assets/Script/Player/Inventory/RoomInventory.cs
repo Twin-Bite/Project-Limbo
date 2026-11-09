@@ -86,5 +86,6 @@ public class RoomInventory : MonoBehaviour
     {
         Debug.Log(message, this);
         onMessage.Invoke(message);
+        //some fuckass fix lmao
     }
 }

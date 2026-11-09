@@ -46,7 +46,7 @@ public class RoomPickup : MonoBehaviour
         );
 
         onPickedUp.Invoke();
-
+//some fuckass fix lmao
         gameObject.SetActive(false);
     }
 }

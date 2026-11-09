@@ -97,6 +97,7 @@ public class RoomKeyDoor : MonoBehaviour
         finally
         {
             processingInteraction = false;
+            //some fuckass fix lmao
         }
     }
 }
