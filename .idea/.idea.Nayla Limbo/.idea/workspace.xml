@@ -77,13 +77,20 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="HighlightingSettingsPerFile">
-    <setting file="file://C:/Work/[Integrasi] desktop-procedural-unhan-2025-ud/Assets/Paroxe/PDFRenderer/API/PDFViewer.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://C:/Work/[Integrasi] desktop-procedural-unhan-2025-ud/Assets/Paroxe/PDFRenderer/Internal/Scripts/Viewer/PDFViewerLeftPanelScrollbar.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Script/Player/Combination Lock/RoomLockInspector.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Script/Player/Inventory/RoomInventory.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Script/Utility/SceneManager.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Script/Player/Inventory/Raycast/RoomPlayerInteractor.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scenes/Main Menu/Global Volume Profile.asset" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://C:/Work/[Integrasi] desktop-procedural-unhan-2025-ud/Assets/Paroxe/PDFRenderer/API/PDFViewer.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Script/Player/Inventory/RoomPickup.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://C:/Work/[Integrasi] desktop-procedural-unhan-2025-ud/Assets/Paroxe/PDFRenderer/Internal/Scripts/Viewer/PDFViewerLeftPanelScrollbar.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Script/Player/Combination Lock/RoomCombinationLock.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Script/Player/Inventory/RoomKeyDoor.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Script/Player/3D/ZoneEvent.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://C:/Work/[Integrasi] desktop-procedural-unhan-2025-ud/Assets/Paroxe/PDFRenderer/API/Rendering/PDFRenderer.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Plugins/Easy Cutscene/Assets/Scripts/EcCutscene.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Script/Player/3D/FadeBehaviour.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">

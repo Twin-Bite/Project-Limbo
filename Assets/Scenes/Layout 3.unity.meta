@@ -1,5 +1,10 @@
 fileFormatVersion: 2
-guid: 3d67dbb05d9a5b445844818a81097102
+<<<<<<<< HEAD:Assets/Scenes/Layout 2.unity.meta
+guid: fb9a7a12bcf7cc74fb4d37542d104411
+========
+guid: c28325e6d137c1f48b6557d6976f1633
+folderAsset: yes
+>>>>>>>> feat/inventory:Assets/Script/Player/Combination Lock.meta
 DefaultImporter:
   externalObjects: {}
   userData: 
