@@ -6,6 +6,7 @@ using UnityEngine.Events;
 [Serializable]
 public class RoomLockWheelData
 {
+//some fuckass fix lmao
     public Transform wheel;
     public Vector3 localAxis = Vector3.up;
     public bool reverseDirection;

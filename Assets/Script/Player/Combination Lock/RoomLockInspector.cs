@@ -58,7 +58,7 @@ public class RoomLockInspector : MonoBehaviour
     private bool previousPostProcessing, previousShadows;
     private bool previousLightEnabled;
     private int previousLightMask;
-
+//some fuckass fix lmao
     public bool IsInspecting => state != ViewState.Closed;
     public bool CanInspect => !IsInspecting && isActiveAndEnabled &&
         puzzle != null && puzzle.isActiveAndEnabled && puzzle.IsReady;
