@@ -10,16 +10,20 @@
       <e p="Assembly-CSharp.csproj" t="IncludeRecursive" />
       <e p="Assets" t="Include">
         <e p="Assets" t="Include">
-          <e p="Original Art" t="Include">
-            <e p="Joystick" t="Include">
-              <e p="Input_Joystick" t="Include">
-                <e p="PlayerInputActions.cs" t="Include" />
+          <e p="Deprecated i guess" t="Include">
+            <e p="Original Art" t="Include">
+              <e p="Joystick" t="Include">
+                <e p="Input_Joystick" t="Include">
+                  <e p="PlayerInputActions.cs" t="Include" />
+                </e>
               </e>
             </e>
           </e>
-          <e p="unityglitch-master" t="Include">
-            <e p="GlitchEffect.cs" t="Include" />
-            <e p="GlitchShader.shader" t="Include" />
+          <e p="Shaders" t="Include">
+            <e p="unityglitch-master" t="Include">
+              <e p="GlitchEffect.cs" t="Include" />
+              <e p="GlitchShader.shader" t="Include" />
+            </e>
           </e>
         </e>
         <e p="Editor" t="Include">
