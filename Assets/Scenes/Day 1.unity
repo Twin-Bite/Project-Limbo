@@ -93,7 +93,7 @@ LightmapSettings:
     m_ExportTrainingData: 0
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
-  m_LightingDataAsset: {fileID: 0}
+  m_LightingDataAsset: {fileID: 112000000, guid: 3b05b17dcb3cb7a43b481fe4bae7d9d8, type: 2}
   m_LightingSettings: {fileID: 4890085278179872738, guid: 418f63ebb77f4ad479bb6739882afd2f, type: 2}
 --- !u!196 &4
 NavMeshSettings:
@@ -2666,7 +2666,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a83d2f7ae04ab6f4f99b0d85377be998, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Unity.RenderPipelines.Core.Runtime::UnityEngine.Rendering.ProbeVolumePerSceneData
-  serializedBakingSet: {fileID: 0}
+  serializedBakingSet: {fileID: 11400000, guid: 5c1fe744b28a6f44f8d86e84316be88d, type: 2}
   sceneGUID: f33617f0aa16e6c4b9da73f7e335ede6
   obsoleteAsset: {fileID: 0}
   obsoleteCellSharedDataAsset: {fileID: 0}
@@ -12073,6 +12073,7 @@ GameObject:
   - component: {fileID: 937821261}
   - component: {fileID: 937821262}
   - component: {fileID: 937821263}
+  - component: {fileID: 937821264}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -12147,8 +12148,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 937821257}
   serializedVersion: 2
-  m_LocalRotation: {x: -0.2084828, y: -0.41432494, z: 0.098103955, w: -0.88048023}
-  m_LocalPosition: {x: 7.732708, y: -3.9830284, z: 4.621748}
+  m_LocalRotation: {x: -0.15309495, y: 0.28318638, z: -0.045847256, w: -0.9456561}
+  m_LocalPosition: {x: 6.65283, y: 5.487648, z: 13.965288}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -12248,6 +12249,38 @@ MonoBehaviour:
   bokehAperture: 1
   blurRadius: 1.5
   highQuality: 1
+--- !u!114 &937821264
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 937821257}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a09296ed0bf5410cb6c0ad10159b394f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::RND.Rendering.FullscreenDitherFilter
+  settings:
+    ditherIntensity: 0.45
+    ditherPattern: 1
+    colorMode: 0
+    pixelScale: 2
+    colorSteps: 8
+    contrast: 1.05
+    brightness: 0
+    halftoneAngle: 45
+    halftoneDensity: 0.3
+    halftoneSoftness: 0.08
+    inkColor: {r: 0.04, g: 0.04, b: 0.06, a: 1}
+    paperColor: {r: 0.96, g: 0.95, b: 0.92, a: 1}
+    palette0: {r: 0.06, g: 0.13, b: 0.11, a: 1}
+    palette1: {r: 0.19, g: 0.38, b: 0.19, a: 1}
+    palette2: {r: 0.55, g: 0.67, b: 0.06, a: 1}
+    palette3: {r: 0.61, g: 0.73, b: 0.06, a: 1}
+    vignetteStrength: 0.15
+    splitScreen: 0
+    renderPassEvent: 600
 --- !u!43 &945166736
 Mesh:
   m_ObjectHideFlags: 0
@@ -26827,6 +26860,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 3027518813846257, guid: c87c04cb52c391c49a21cd0bd1fc01b5, type: 3}
+      propertyPath: 'm_Materials.Array.data[1]'
+      value: 
+      objectReference: {fileID: 2100000, guid: deba066c9d0eed24798fdd041e008328, type: 2}
     - target: {fileID: 62460584270205611, guid: c87c04cb52c391c49a21cd0bd1fc01b5, type: 3}
       propertyPath: m_Mesh
       value: 
@@ -27695,6 +27732,10 @@ PrefabInstance:
       propertyPath: m_Mesh
       value: 
       objectReference: {fileID: 2031680799}
+    - target: {fileID: 3456549218447734935, guid: c87c04cb52c391c49a21cd0bd1fc01b5, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: deba066c9d0eed24798fdd041e008328, type: 2}
     - target: {fileID: 3465599266864539627, guid: c87c04cb52c391c49a21cd0bd1fc01b5, type: 3}
       propertyPath: m_Mesh
       value: 
@@ -29483,6 +29524,10 @@ PrefabInstance:
       propertyPath: m_Mesh
       value: 
       objectReference: {fileID: 1348594709}
+    - target: {fileID: 8763434895372666993, guid: c87c04cb52c391c49a21cd0bd1fc01b5, type: 3}
+      propertyPath: 'm_Materials.Array.data[1]'
+      value: 
+      objectReference: {fileID: 2100000, guid: deba066c9d0eed24798fdd041e008328, type: 2}
     - target: {fileID: 8765348881023743314, guid: c87c04cb52c391c49a21cd0bd1fc01b5, type: 3}
       propertyPath: interactionPrompt
       value: 

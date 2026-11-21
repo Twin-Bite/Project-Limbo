@@ -26,7 +26,7 @@ RenderSettings:
   m_AmbientIntensity: 1
   m_AmbientMode: 0
   m_SubtractiveShadowColor: {r: 0, g: 0, b: 0, a: 1}
-  m_SkyboxMaterial: {fileID: 0}
+  m_SkyboxMaterial: {fileID: 2100000, guid: 3e570c99a4564882bc20101010101010, type: 2}
   m_HaloStrength: 0.5
   m_FlareStrength: 1
   m_FlareFadeSpeed: 3
@@ -19946,7 +19946,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &265354961
 Transform:
   m_ObjectHideFlags: 0
@@ -23056,7 +23056,7 @@ MonoBehaviour:
   version: 2
   globalVolume: 0
   mode: 0
-  size: {x: 37.16228, y: 27.505001, z: 22.883171}
+  size: {x: 37.16228, y: 27.505001, z: 19.154974}
   overrideRendererFilters: 0
   minRendererVolumeSize: 0.1
   objectLayerMask:
@@ -23094,7 +23094,7 @@ Transform:
   m_GameObject: {fileID: 599396772}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 7.0838614, y: -5.9675007, z: 11.643387}
+  m_LocalPosition: {x: 7.0838614, y: -5.9675007, z: 13.507485}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -30676,6 +30676,7 @@ GameObject:
   - component: {fileID: 1584493602}
   - component: {fileID: 1584493601}
   - component: {fileID: 1584493605}
+  - component: {fileID: 1584493606}
   m_Layer: 0
   m_Name: Camera
   m_TagString: Untagged
@@ -30744,7 +30745,7 @@ Camera:
   m_GameObject: {fileID: 1584493600}
   m_Enabled: 1
   serializedVersion: 2
-  m_ClearFlags: 2
+  m_ClearFlags: 1
   m_BackGroundColor: {r: 0, g: 0, b: 0, a: 0}
   m_projectionMatrixMode: 1
   m_GateFitMode: 2
@@ -30833,6 +30834,38 @@ MonoBehaviour:
       m_PostInfinity: 2
       m_RotationOrder: 4
   CustomBlends: {fileID: 0}
+--- !u!114 &1584493606
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1584493600}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a09296ed0bf5410cb6c0ad10159b394f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::RND.Rendering.FullscreenDitherFilter
+  settings:
+    ditherIntensity: 0.18
+    ditherPattern: 1
+    colorMode: 0
+    pixelScale: 2
+    colorSteps: 8
+    contrast: 1.05
+    brightness: 0
+    halftoneAngle: 45
+    halftoneDensity: 0.3
+    halftoneSoftness: 0.08
+    inkColor: {r: 0.04, g: 0.04, b: 0.06, a: 1}
+    paperColor: {r: 0.96, g: 0.95, b: 0.92, a: 1}
+    palette0: {r: 0.06, g: 0.13, b: 0.11, a: 1}
+    palette1: {r: 0.19, g: 0.38, b: 0.19, a: 1}
+    palette2: {r: 0.55, g: 0.67, b: 0.06, a: 1}
+    palette3: {r: 0.61, g: 0.73, b: 0.06, a: 1}
+    vignetteStrength: 0.15
+    splitScreen: 0
+    renderPassEvent: 600
 --- !u!1 &1594237359
 GameObject:
   m_ObjectHideFlags: 0

@@ -72,9 +72,10 @@ MonoBehaviour:
     probeSamplingDebugTexture: {fileID: 0}
     probeVolumeBlendStatesCS: {fileID: 0}
   m_RendererFeatures:
+  - {fileID: 839631779764454648}
   - {fileID: -8137077445216399911}
   - {fileID: -3093977908719366922}
-  m_RendererFeatureMap: d98d08f82c4b138ff64ce00f7cfb0fd5
+  m_RendererFeatureMap: f844fdb6a7f8a60bd98d08f82c4b138ff64ce00f7cfb0fd5
   m_UseNativeRenderPass: 0
   xrSystemData: {fileID: 0}
   postProcessData: {fileID: 11400000, guid: 41439944d30ece34e96484bdb6645b55, type: 2}
@@ -98,11 +99,44 @@ MonoBehaviour:
   m_ShadowTransparentReceive: 1
   m_RenderingMode: 2
   m_DepthPrimingMode: 0
-  m_CopyDepthMode: 1
+  m_CopyDepthMode: 0
   m_DepthAttachmentFormat: 0
   m_DepthTextureFormat: 0
   m_AccurateGbufferNormals: 0
   m_IntermediateTextureMode: 0
+--- !u!114 &839631779764454648
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bd0bca780312447f89e821286da01554, type: 3}
+  m_Name: FullscreenDitherFeature
+  m_EditorClassIdentifier: Assembly-CSharp::RND.Rendering.FullscreenDitherFeature
+  m_Active: 1
+  settings:
+    ditherIntensity: 1
+    ditherPattern: 1
+    colorMode: 0
+    pixelScale: 1
+    colorSteps: 6
+    contrast: 1
+    brightness: 0
+    halftoneAngle: 45
+    halftoneDensity: 0.25
+    halftoneSoftness: 0.08
+    inkColor: {r: 0.05, g: 0.05, b: 0.08, a: 1}
+    paperColor: {r: 0.95, g: 0.94, b: 0.9, a: 1}
+    palette0: {r: 0.06, g: 0.13, b: 0.11, a: 1}
+    palette1: {r: 0.19, g: 0.38, b: 0.19, a: 1}
+    palette2: {r: 0.55, g: 0.67, b: 0.06, a: 1}
+    palette3: {r: 0.61, g: 0.73, b: 0.06, a: 1}
+    vignetteStrength: 0
+    splitScreen: 0
+    renderPassEvent: 600
 --- !u!114 &2807758766536615143
 MonoBehaviour:
   m_ObjectHideFlags: 0
