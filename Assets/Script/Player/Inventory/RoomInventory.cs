@@ -1,3 +1,6 @@
+using System;
+using System.Collections.Generic;
+using System.Globalization;
 using UnityEngine;
 using UnityEngine.Events;
 
@@ -7,29 +10,65 @@ public class RoomInventory : MonoBehaviour
     [SerializeField] private string[] items = new string[10];
 
     [Header("Events")]
-    [SerializeField] private UnityEvent<string> onItemAdded = new UnityEvent<string>();
-    [SerializeField] private UnityEvent<string> onItemRemoved = new UnityEvent<string>();
-    [SerializeField] private UnityEvent<string> onMessage = new UnityEvent<string>();
+    [SerializeField] private UnityEvent<string> onItemAdded =
+        new UnityEvent<string>();
+
+    [SerializeField] private UnityEvent<string> onItemRemoved =
+        new UnityEvent<string>();
+
+    [SerializeField] private UnityEvent<string> onMessage =
+        new UnityEvent<string>();
+
+    private readonly Dictionary<string, string> itemNames =
+        new Dictionary<string, string>(StringComparer.Ordinal);
+
+    private CharacterController characterController;
+
+    public int SlotCount => items?.Length ?? 0;
+    public UnityEvent<string> ItemAdded => onItemAdded;
+    public UnityEvent<string> ItemRemoved => onItemRemoved;
+
+    internal Vector3 UsePosition => characterController != null
+        ? characterController.transform.TransformPoint(
+            characterController.center
+        )
+        : transform.position;
+
+    private void Awake()
+    {
+        characterController = GetComponent<CharacterController>();
+    }
+
+    public string GetItemId(int slotIndex)
+    {
+        return slotIndex >= 0 && slotIndex < SlotCount
+            ? items[slotIndex]
+            : null;
+    }
+
+    public string GetItemName(string itemId)
+    {
+        if (string.IsNullOrWhiteSpace(itemId))
+            return string.Empty;
+
+        if (itemNames.TryGetValue(itemId, out string displayName))
+            return displayName;
+
+        string readableId = itemId.Replace('_', ' ').Replace('-', ' ');
+        return CultureInfo.InvariantCulture.TextInfo.ToTitleCase(readableId);
+    }
 
     public bool HasItem(string itemId)
     {
-        if (string.IsNullOrWhiteSpace(itemId) || items == null)
-        {
-            return false;
-        }
-
-        for (int i = 0; i < items.Length; i++)
-        {
-            if (items[i] == itemId)
-            {
-                return true;
-            }
-        }
-
-        return false;
+        return FindItemSlot(itemId) >= 0;
     }
 
     public bool TryAddItem(string itemId)
+    {
+        return TryAddItem(itemId, null);
+    }
+
+    public bool TryAddItem(string itemId, string displayName)
     {
         if (string.IsNullOrWhiteSpace(itemId))
         {
@@ -43,18 +82,18 @@ public class RoomInventory : MonoBehaviour
             return false;
         }
 
-        if (items != null)
+        for (int i = 0; i < SlotCount; i++)
         {
-            for (int i = 0; i < items.Length; i++)
-            {
-                if (string.IsNullOrWhiteSpace(items[i]))
-                {
-                    items[i] = itemId;
-                    onItemAdded.Invoke(itemId);
+            if (!string.IsNullOrWhiteSpace(items[i]))
+                continue;
 
-                    return true;
-                }
-            }
+            items[i] = itemId;
+
+            if (!string.IsNullOrWhiteSpace(displayName))
+                itemNames[itemId] = displayName.Trim();
+
+            onItemAdded?.Invoke(itemId);
+            return true;
         }
 
         ShowMessage("Inventory penuh.");
@@ -63,29 +102,35 @@ public class RoomInventory : MonoBehaviour
 
     public bool TryRemoveItem(string itemId)
     {
-        if (string.IsNullOrWhiteSpace(itemId) || items == null)
-        {
+        int slotIndex = FindItemSlot(itemId);
+
+        if (slotIndex < 0)
             return false;
-        }
 
-        for (int i = 0; i < items.Length; i++)
-        {
-            if (items[i] == itemId)
-            {
-                items[i] = string.Empty;
-                onItemRemoved.Invoke(itemId);
+        items[slotIndex] = string.Empty;
+        itemNames.Remove(itemId);
 
-                return true;
-            }
-        }
-
-        return false;
+        onItemRemoved?.Invoke(itemId);
+        return true;
     }
 
     public void ShowMessage(string message)
     {
         Debug.Log(message, this);
-        onMessage.Invoke(message);
-        //some fuckass fix lmao
+        onMessage?.Invoke(message);
+    }
+
+    private int FindItemSlot(string itemId)
+    {
+        if (string.IsNullOrWhiteSpace(itemId))
+            return -1;
+
+        for (int i = 0; i < SlotCount; i++)
+        {
+            if (string.Equals(items[i], itemId, StringComparison.Ordinal))
+                return i;
+        }
+
+        return -1;
     }
 }

@@ -1,4 +1,6 @@
+using System;
 using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.UI;
@@ -7,293 +9,308 @@ using UnityEngine.UI;
 using UnityEngine.InputSystem;
 #endif
 
-/// <summary>
-/// Controls showing, hiding, and toggling a UI panel/canvas.
-/// Works with:
-/// 1. A physical keyboard/gamepad button press (e.g., Escape, Tab, I, M).
-/// 2. A UI Button click (via direct inspector slot or Button onClick event).
-/// </summary>
 public class UIToggleController : MonoBehaviour
 {
     [Header("Target UI")]
-    [Tooltip("The UI GameObject (panel, window, or Canvas) to show and hide.")]
     [SerializeField] private GameObject uiTarget;
-
-    [Tooltip("Optional CanvasGroup on the UI target for smooth fading and raycast blocking.")]
     [SerializeField] private CanvasGroup canvasGroup;
 
-    [Header("UI Buttons (Optional)")]
-    [Tooltip("Optional UI Button that toggles or opens this UI when clicked.")]
+    [Header("UI Buttons")]
     [SerializeField] private Button openOrToggleButton;
-
-    [Tooltip("Optional UI Button (e.g. an 'X' or 'Back' button) that closes this UI when clicked.")]
     [SerializeField] private Button closeButton;
 
-    [Header("Keyboard / Controller Trigger")]
-    [Tooltip("Enable or disable keyboard key toggle.")]
+    [Header("Keyboard")]
     [SerializeField] private bool enableKeyToggle = true;
-
-    [Tooltip("The keyboard key used to toggle the UI (e.g. Escape, Tab, I, M).")]
     [SerializeField] private KeyCode toggleKey = KeyCode.Escape;
-
-    [Tooltip("If true, pressing Escape will close the UI even if toggleKey is set to another key.")]
     [SerializeField] private bool allowEscapeToClose = true;
 
-    [Header("Behavior Settings")]
-    [Tooltip("Whether the UI should start visible or hidden when the scene loads.")]
-    [SerializeField] private bool startVisible = false;
-
-    [Tooltip("Pause the game (Time.timeScale = 0) while the UI is open.")]
-    [SerializeField] private bool pauseGameWhenOpen = false;
-
-    [Tooltip("Unlock and show the mouse cursor while the UI is open (helpful for first-person/horror games).")]
+    [Header("Behavior")]
+    [SerializeField] private bool startVisible;
+    [SerializeField] private bool pauseGameWhenOpen;
     [SerializeField] private bool controlCursor = true;
 
-    [Header("Animation Settings")]
-    [Tooltip("Fade in/out smoothly using the CanvasGroup (if assigned).")]
-    [SerializeField] private bool smoothFade = false;
+    [SerializeField] private Behaviour blockOpeningWhenDisabled;
 
-    [Tooltip("Fade duration in seconds (unscaled time).")]
-    [SerializeField] private float fadeDuration = 0.2f;
+    [SerializeField] private Behaviour[] suspendWhileVisible =
+        Array.Empty<Behaviour>();
+
+    [Header("Animation")]
+    [SerializeField] private bool smoothFade;
+    [Min(0f)] [SerializeField] private float fadeDuration = 0.2f;
 
     [Header("Events")]
-    public UnityEvent onShow;
-    public UnityEvent onHide;
+    public UnityEvent onShow = new UnityEvent();
+    public UnityEvent onHide = new UnityEvent();
 
-    private bool _isVisible;
-    private Coroutine _fadeCoroutine;
-    private CursorLockMode _previousLockMode;
-    private bool _previousCursorVisible;
+    private readonly List<Behaviour> suspendedControls =
+        new List<Behaviour>();
 
-    public bool IsVisible => _isVisible;
+    private Coroutine fade;
+    private float previousTimeScale;
+    private CursorLockMode previousLockMode;
+    private bool previousCursorVisible;
+    private bool pausedByMenu;
+    private bool cursorControlledByMenu;
+
+    public bool IsVisible { get; private set; }
 
     private void Awake()
     {
-        // Auto-detect CanvasGroup if target is assigned but CanvasGroup slot is empty
         if (uiTarget != null && canvasGroup == null)
-        {
             canvasGroup = uiTarget.GetComponent<CanvasGroup>();
-        }
 
-        // Auto-wire UI Buttons if assigned in inspector
         if (openOrToggleButton != null)
-        {
             openOrToggleButton.onClick.AddListener(ToggleUI);
-        }
 
         if (closeButton != null)
-        {
             closeButton.onClick.AddListener(HideUI);
-        }
     }
 
     private void Start()
     {
-        // Apply initial state
-        SetUIVisible(startVisible, instant: true);
+        if (IsVisible)
+            return;
+
+        ApplyVisibility(false);
+
+        if (startVisible)
+            SetUIVisible(true, instant: true);
     }
 
     private void Update()
     {
-        if (!enableKeyToggle) return;
+        if (!enableKeyToggle)
+            return;
 
-        if (IsToggleKeyPressed())
-        {
+        if (WasPressed(toggleKey))
             ToggleUI();
-        }
-        else if (allowEscapeToClose && _isVisible && toggleKey != KeyCode.Escape && IsEscapePressed())
-        {
+        else if (IsVisible && allowEscapeToClose && WasPressed(KeyCode.Escape))
             HideUI();
+    }
+
+    private void OnDisable()
+    {
+        bool wasVisible = IsVisible;
+
+        StopFade();
+        IsVisible = false;
+
+        if (wasVisible)
+            ReleaseGameplayState();
+
+        if (uiTarget != null &&
+            uiTarget.activeInHierarchy &&
+            !transform.IsChildOf(uiTarget.transform))
+        {
+            ApplyVisibility(false);
         }
+
+        if (wasVisible)
+            onHide?.Invoke();
     }
 
     private void OnDestroy()
     {
         if (openOrToggleButton != null)
-        {
             openOrToggleButton.onClick.RemoveListener(ToggleUI);
-        }
 
         if (closeButton != null)
-        {
             closeButton.onClick.RemoveListener(HideUI);
-        }
     }
 
-    /// <summary>
-    /// Shows the target UI. Can be hooked directly into UI Button onClick events.
-    /// </summary>
     public void ShowUI()
     {
         SetUIVisible(true);
     }
 
-    /// <summary>
-    /// Hides the target UI. Can be hooked directly into UI Button onClick events.
-    /// </summary>
     public void HideUI()
     {
         SetUIVisible(false);
     }
 
-    /// <summary>
-    /// Toggles the target UI between visible and hidden.
-    /// </summary>
-    public void ToggleUI()
+    public void HideUIImmediately()
     {
-        SetUIVisible(!_isVisible);
+        SetUIVisible(false, instant: true);
     }
 
-    /// <summary>
-    /// Sets the UI visibility state.
-    /// </summary>
+    public void ToggleUI()
+    {
+        SetUIVisible(!IsVisible);
+    }
+
     public void SetUIVisible(bool visible, bool instant = false)
     {
-        _isVisible = visible;
+        if (!isActiveAndEnabled || visible == IsVisible)
+            return;
 
-        if (uiTarget == null)
+        if (uiTarget == null || transform.IsChildOf(uiTarget.transform))
         {
-            Debug.LogWarning("[UIToggleController] UI Target is not assigned in the inspector!", this);
+            Debug.LogWarning(
+                "[UIToggleController] Isi UI Target dan taruh controller di objek yang tetap aktif.",
+                this
+            );
+
             return;
         }
 
-        // Handle game pause
-        if (pauseGameWhenOpen)
+        if (visible && (
+            (pauseGameWhenOpen && Time.timeScale <= 0f) ||
+            (blockOpeningWhenDisabled != null &&
+                !blockOpeningWhenDisabled.isActiveAndEnabled)
+        ))
         {
-            Time.timeScale = _isVisible ? 0f : 1f;
-            Debug.Log("Paused");
+            return;
         }
 
-        // Handle cursor lock/unlock
-        if (controlCursor)
-        {
-            if (_isVisible)
-            {
-                _previousLockMode = Cursor.lockState;
-                _previousCursorVisible = Cursor.visible;
-                Cursor.lockState = CursorLockMode.None;
-                Cursor.visible = true;
-            }
-            else
-            {
-                Cursor.lockState = _previousLockMode;
-                Cursor.visible = _previousCursorVisible;
-            }
-        }
+        StopFade();
+        IsVisible = visible;
 
-        // Apply visual display
-        if (smoothFade && canvasGroup != null && Application.isPlaying && !instant)
-        {
-            if (_fadeCoroutine != null) StopCoroutine(_fadeCoroutine);
-            _fadeCoroutine = StartCoroutine(FadeRoutine(_isVisible));
-        }
+        if (visible)
+            CaptureGameplayState();
         else
-        {
-            if (canvasGroup != null)
-            {
-                canvasGroup.alpha = _isVisible ? 1f : 0f;
-                canvasGroup.interactable = _isVisible;
-                canvasGroup.blocksRaycasts = _isVisible;
-            }
+            ReleaseGameplayState();
 
-            uiTarget.SetActive(_isVisible);
-        }
+        if (instant || !smoothFade || canvasGroup == null || fadeDuration <= 0f)
+            ApplyVisibility(visible);
+        else
+            fade = StartCoroutine(FadeVisibility(visible));
 
-        // Trigger events
-        if (_isVisible)
-        {
+        if (visible)
             onShow?.Invoke();
-        }
         else
-        {
             onHide?.Invoke();
+    }
+
+    private void CaptureGameplayState()
+    {
+        pausedByMenu = pauseGameWhenOpen;
+
+        if (pausedByMenu)
+        {
+            previousTimeScale = Time.timeScale;
+            Time.timeScale = 0f;
+        }
+
+        cursorControlledByMenu = controlCursor;
+
+        if (cursorControlledByMenu)
+        {
+            previousLockMode = Cursor.lockState;
+            previousCursorVisible = Cursor.visible;
+
+            Cursor.lockState = CursorLockMode.None;
+            Cursor.visible = true;
+        }
+
+        if (suspendWhileVisible == null)
+            return;
+
+        foreach (Behaviour control in suspendWhileVisible)
+        {
+            if (control == null || control == this || !control.enabled)
+                continue;
+
+            suspendedControls.Add(control);
+            control.enabled = false;
         }
     }
 
-    private IEnumerator FadeRoutine(bool targetVisible)
+    private void ReleaseGameplayState()
     {
-        if (targetVisible)
+        if (pausedByMenu && Time.timeScale == 0f)
+            Time.timeScale = previousTimeScale;
+
+        pausedByMenu = false;
+
+        foreach (Behaviour control in suspendedControls)
         {
-            uiTarget.SetActive(true);
+            if (control != null)
+                control.enabled = true;
         }
 
-        float startAlpha = canvasGroup.alpha;
-        float endAlpha = targetVisible ? 1f : 0f;
+        suspendedControls.Clear();
+
+        if (!cursorControlledByMenu)
+            return;
+
+        cursorControlledByMenu = false;
+        Cursor.lockState = previousLockMode;
+        Cursor.visible = previousCursorVisible;
+    }
+
+    private void StopFade()
+    {
+        if (fade == null)
+            return;
+
+        StopCoroutine(fade);
+        fade = null;
+    }
+
+    private void ApplyVisibility(bool visible)
+    {
+        if (canvasGroup != null)
+        {
+            canvasGroup.alpha = visible ? 1f : 0f;
+            canvasGroup.interactable = visible;
+            canvasGroup.blocksRaycasts = visible;
+        }
+
+        if (uiTarget != null && uiTarget.activeSelf != visible)
+            uiTarget.SetActive(visible);
+    }
+
+    private IEnumerator FadeVisibility(bool visible)
+    {
+        canvasGroup.interactable = visible;
+        canvasGroup.blocksRaycasts = true;
+
+        if (visible)
+            uiTarget.SetActive(true);
+
+        float initialAlpha = canvasGroup.alpha;
+        float targetAlpha = visible ? 1f : 0f;
         float elapsed = 0f;
 
         while (elapsed < fadeDuration)
         {
             elapsed += Time.unscaledDeltaTime;
-            canvasGroup.alpha = Mathf.Lerp(startAlpha, endAlpha, elapsed / fadeDuration);
+
+            canvasGroup.alpha = Mathf.Lerp(
+                initialAlpha,
+                targetAlpha,
+                elapsed / fadeDuration
+            );
+
             yield return null;
         }
 
-        canvasGroup.alpha = endAlpha;
-        canvasGroup.interactable = targetVisible;
-        canvasGroup.blocksRaycasts = targetVisible;
-
-        if (!targetVisible)
-        {
-            uiTarget.SetActive(false);
-        }
-
-        _fadeCoroutine = null;
+        ApplyVisibility(visible);
+        fade = null;
     }
 
-    /// <summary>
-    /// Checks if the configured toggle key was pressed across both old and new input systems.
-    /// </summary>
-    private bool IsToggleKeyPressed()
+    private static bool WasPressed(KeyCode keyCode)
     {
 #if ENABLE_INPUT_SYSTEM
-        if (Keyboard.current != null)
-        {
-            Key key = MapKeyCodeToKey(toggleKey);
-            if (key != Key.None && Keyboard.current[key].wasPressedThisFrame)
-            {
-                return true;
-            }
-        }
-#endif
+        Key key = MapKeyCode(keyCode);
 
-#if ENABLE_LEGACY_INPUT_MANAGER
-        try
+        if (Keyboard.current != null &&
+            key != Key.None &&
+            Keyboard.current[key].wasPressedThisFrame)
         {
-            if (Input.GetKeyDown(toggleKey))
-            {
-                return true;
-            }
-        }
-        catch (System.InvalidOperationException)
-        {
-            // Thrown if project is strictly set to New Input System without legacy support
-        }
-#endif
-
-        return false;
-    }
-
-    private bool IsEscapePressed()
-    {
-#if ENABLE_INPUT_SYSTEM
-        if (Keyboard.current != null && Keyboard.current.escapeKey.wasPressedThisFrame)
             return true;
+        }
 #endif
 
 #if ENABLE_LEGACY_INPUT_MANAGER
-        try
-        {
-            if (Input.GetKeyDown(KeyCode.Escape))
-                return true;
-        }
-        catch (System.InvalidOperationException) { }
-#endif
-
+        return Input.GetKeyDown(keyCode);
+#else
         return false;
+#endif
     }
 
 #if ENABLE_INPUT_SYSTEM
-    private Key MapKeyCodeToKey(KeyCode keyCode)
+    private static Key MapKeyCode(KeyCode keyCode)
     {
         return keyCode switch
         {
